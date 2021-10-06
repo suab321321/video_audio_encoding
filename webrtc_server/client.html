@@ -1,0 +1,24 @@
+
+
+<html>
+    <button onclick="handle()">Offer</button>
+</html>
+
+<script>
+    const socket = new WebSocket('ws://127.0.0.1:3000');
+    const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
+    const peerConnection = new RTCPeerConnection(configuration);
+    socket.addEventListener('sdp_remote', (message)=>{
+        if(message.answer){
+            peerConnection.setRemoteDescription(message.answer);
+        }
+    });
+    async function handle() {
+        // socket.send("hello world");
+        const sdpOffer = await peerConnection.createOffer();
+        peerConnection.setLocalDescription(sdpOffer);
+        const msg = JSON.stringify({"header": 0, "sdpOffer": sdpOffer.sdp});
+        socket.send(msg);
+    }
+    
+</script>

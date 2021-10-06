@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/abhinav/video_audio_encoding/webrtc_server/main.cpp
+iostream
+-
+utility/websocket_server.hpp
+/home/abhinav/video_audio_encoding/webrtc_server/utility/websocket_server.hpp
+
+/home/abhinav/video_audio_encoding/webrtc_server/utility/websocket_server.cpp
+websocket_server.hpp
+/home/abhinav/video_audio_encoding/webrtc_server/utility/websocket_server.hpp
+functional
+-
+
+/home/abhinav/video_audio_encoding/webrtc_server/utility/websocket_server.hpp
+websocketpp/config/asio_no_tls.hpp
+-
+websocketpp/server.hpp
+-
+rapidjson/document.h
+/home/abhinav/video_audio_encoding/webrtc_server/utility/rapidjson/document.h
+unordered_map
+-
+functional
+-
+
